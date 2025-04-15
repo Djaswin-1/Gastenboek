@@ -1,6 +1,6 @@
 <?php
 session_start(); // Start een sessie om gegevens op te slaan na inloggen
-include 'database/db_connect.php'; // De databaseverbinding
+include '../database/db_connect.php'; // De databaseverbinding
 
 // Controleer of het formulier is ingediend
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -21,7 +21,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             // Wachtwoord komt overeen, sessie starten
             $_SESSION['user_id'] = $user['id'];
             $_SESSION['username'] = $user['gebruikersnaam'];
-            header("Location: post_plaatsen.php"); // Redirect naar een welkompagina
+            header("Location: ../posts/post_plaatsen.php"); // Redirect naar een welkompagina
             exit;
         } else {
             $error = "Ongeldig wachtwoord.";
@@ -39,7 +39,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css"> <!-- Verwijzing naar CSS-bestand -->
+    <link rel="stylesheet" href="../style.css"> <!-- Verwijzing naar CSS-bestand -->
     <title>Inloggen</title>
 </head>
 <body>

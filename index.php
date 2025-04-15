@@ -18,14 +18,14 @@ session_start();
 
         <?php if (isset($_SESSION['user_id'])): ?>
             <p>Welkom, <strong><?php echo htmlspecialchars($_SESSION['username']); ?></strong>! Je bent ingelogd.</p>
-            <a href="post.php" class="btn">Bekijk Berichten</a>
-            <a href="post_plaatsen.php" class="btn">Plaats een Bericht</a> <!-- Alleen zichtbaar als je bent ingelogd -->
-            <a href="logout.php" class="btn">Uitloggen</a>
+            <a href="posts/post.php" class="btn">Bekijk Berichten</a>
+            <a href="posts/post_plaatsen.php" class="btn">Plaats een Bericht</a> <!-- Alleen zichtbaar als je bent ingelogd -->
+            <a href="auth/logout.php" class="btn">Uitloggen</a>
         <?php else: ?>
             <p>Je bent niet ingelogd.</p>
             <p>Log in of registreer een account om een bericht te plaatsen.</p>
-            <a href="login.php" class="btn">Inloggen</a>
-            <a href="register.php" class="btn">Registreren</a>
+            <a href="auth/login.php" class="btn">Inloggen</a>
+            <a href="auth/register.php" class="btn">Registreren</a>
         <?php endif; ?>
     </div>
 

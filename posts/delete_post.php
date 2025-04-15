@@ -1,6 +1,6 @@
 <?php
 session_start();
-include 'database/db_connect.php';
+include '../database/db_connect.php';
 
 // Controleer of de gebruiker is ingelogd
 if (!isset($_SESSION['username'])) {

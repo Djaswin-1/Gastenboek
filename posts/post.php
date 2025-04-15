@@ -1,6 +1,6 @@
 <?php
 session_start();
-include 'database/db_connect.php'; // Databaseverbinding
+include '../database/db_connect.php'; // Databaseverbinding
 
 // Haal alle berichten op uit de database
 $sql = "SELECT id, naam, bericht, afbeelding, tijd FROM berichten ORDER BY tijd DESC";
@@ -12,7 +12,7 @@ $result = $conn->query($sql);
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../style.css">
     <title>Berichten</title>
     
 </head>
@@ -23,7 +23,7 @@ $result = $conn->query($sql);
     <?php
     // Controleer of de gebruiker is ingelogd en toon de logout-knop
     if (isset($_SESSION['username'])) {
-        echo "<a href='logout.php' class='btn btn-danger'>🚪 Uitloggen</a>";
+        echo "<a href='../auth/logout.php' class='btn btn-danger'>🚪 Uitloggen</a>";
     }
     ?>
 

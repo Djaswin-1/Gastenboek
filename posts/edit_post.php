@@ -1,10 +1,10 @@
 <?php
 session_start();
-include 'database/db_connect.php'; // Databaseverbinding
+include '../database/db_connect.php'; // Databaseverbinding
 
 // Controleer of de gebruiker is ingelogd
 if (!isset($_SESSION['username'])) {
-    header("Location: login.php");
+    header("Location: ../auth/login.php");
     exit;
 }
 
@@ -42,7 +42,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && empty($error)) {
 
     // Controleer of er een nieuwe afbeelding is geüpload
     if (!empty($_FILES['afbeelding']['name'])) {
-        $target_dir = "uploads/";
+        $target_dir = "../uploads/";
         $imageFileType = strtolower(pathinfo($_FILES['afbeelding']['name'], PATHINFO_EXTENSION));
 
         // Controleer of het bestand een afbeelding is
@@ -86,7 +86,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && empty($error)) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bericht Wijzigen</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../style.css">
     <script>
         // Functie om een preview van de afbeelding te tonen
         function showImagePreview(input) {

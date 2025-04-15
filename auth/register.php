@@ -1,5 +1,5 @@
 <?php
-include 'database/db_connect.php'; // Databaseverbinding toevoegen
+include '../database/db_connect.php'; // Databaseverbinding toevoegen
 
 // Controleer of het formulier is verzonden
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -47,7 +47,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registreren</title>
-    <link rel="stylesheet" href="style.css"> <!-- Verwijzing naar CSS-bestand -->
+    <link rel="stylesheet" href="../style.css"> <!-- Verwijzing naar CSS-bestand -->
 </head>
 <body>
 
