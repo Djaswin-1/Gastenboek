@@ -13,7 +13,7 @@ $uploadOk = 1;
 $afbeelding_pad = "";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $naam = $_SESSION["username"]; // ✅ Gebruikersnaam uit de sessie halen
+    $naam = htmlspecialchars(strip_tags(trim($_SESSION["username"]))); // ✅ Gebruikersnaam uit sessie + sanitization
     $bericht = trim($_POST["bericht"]);
 
     if (!empty($_FILES["afbeelding"]["name"])) {
